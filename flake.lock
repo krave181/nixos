@@ -1,0 +1,227 @@
+{
+  "nodes": {
+    "EDCD": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727913042,
+        "narHash": "sha256-Iviv/7Wo2uPAEZa1RU8yb0vy45ylvnNllapdX0jShMw=",
+        "owner": "EDCD",
+        "repo": "EDMarketConnector",
+        "rev": "fc00839dfa31d087b2b809774024c21cb2044336",
+        "type": "github"
+      },
+      "original": {
+        "owner": "EDCD",
+        "ref": "stable",
+        "repo": "EDMarketConnector",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "gamescope": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743564569,
+        "narHash": "sha256-pyIzLLYHwD0685pdYAQYqgb0d4eBxg0Veo4QJn1Ilr0=",
+        "owner": "ValveSoftware",
+        "repo": "gamescope",
+        "rev": "f1f105b3a95b4fec5c92e8a10e6927cbb76fe804",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ValveSoftware",
+        "ref": "master",
+        "repo": "gamescope",
+        "type": "github"
+      }
+    },
+    "helix": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1744385517,
+        "narHash": "sha256-pqiSmtbquoBM3cVHELcXHl8CLT8moXVkwbtc5xd5Br0=",
+        "owner": "helix-editor",
+        "repo": "helix",
+        "rev": "340934db92aea902a61b9f79b9e6f4bd15111044",
+        "type": "github"
+      },
+      "original": {
+        "owner": "helix-editor",
+        "ref": "master",
+        "repo": "helix",
+        "type": "github"
+      }
+    },
+    "heroic": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744060043,
+        "narHash": "sha256-A1npFCtCrStoq78qhepG0P5FvZAGeZVvwrpB1jQuYLE=",
+        "owner": "Heroic-Games-Launcher",
+        "repo": "HeroicGamesLauncher",
+        "rev": "5127a03d1db9621be3cca696f765505ebf48093a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Heroic-Games-Launcher",
+        "ref": "main",
+        "repo": "HeroicGamesLauncher",
+        "type": "github"
+      }
+    },
+    "lutris": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744641870,
+        "narHash": "sha256-lUL7smY0l9gmF0QXQJbO5XSuv73I2pmEvAjLmpg86l8=",
+        "owner": "lutris",
+        "repo": "lutris",
+        "rev": "86f7fb0785a3ada8f47738539e7527387a6ebdfc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lutris",
+        "ref": "master",
+        "repo": "lutris",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1740560979,
+        "narHash": "sha256-Vr3Qi346M+8CjedtbyUevIGDZW8LcA1fTG0ugPY/Hic=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5135c59491985879812717f4c9fea69604e7f26f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1735563628,
+        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "protonupqt": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744387587,
+        "narHash": "sha256-eiRZrO3LO0aL+ujCIlGfn6lGsh2EiEg0ksPojXzxNB8=",
+        "owner": "DavidoTek",
+        "repo": "ProtonUp-Qt",
+        "rev": "0c418459dd0dc27d9b20fd3757371a54b2b0e3cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DavidoTek",
+        "ref": "main",
+        "repo": "ProtonUp-Qt",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "EDCD": "EDCD",
+        "gamescope": "gamescope",
+        "helix": "helix",
+        "heroic": "heroic",
+        "lutris": "lutris",
+        "nixpkgs": "nixpkgs_2",
+        "protonupqt": "protonupqt",
+        "steamtinkerlaunch": "steamtinkerlaunch"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "helix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1740623427,
+        "narHash": "sha256-3SdPQrZoa4odlScFDUHd4CUPQ/R1gtH4Mq9u8CBiK8M=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "d342e8b5fd88421ff982f383c853f0fc78a847ab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "steamtinkerlaunch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1740162911,
+        "narHash": "sha256-I7Aa7bZ6WB5LfCxyZUbl7fshyr2YWlZTMZDJKCODvhY=",
+        "owner": "sonic2kk",
+        "repo": "steamtinkerlaunch",
+        "rev": "36e917c383a333caa43e187c06c0aed0c30c0421",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sonic2kk",
+        "ref": "master",
+        "repo": "steamtinkerlaunch",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

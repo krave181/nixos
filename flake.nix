@@ -1,0 +1,54 @@
+{
+  description = "A simple NixOS flake";
+
+  inputs = {
+    # NixOS official package source, using the nixos-24.05 branch here
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+
+    helix.url = "github:helix-editor/helix/master";
+    # SteamTinkerLaunch repo
+    steamtinkerlaunch = {
+      url = "github:sonic2kk/steamtinkerlaunch/master";
+      flake = false;
+    };
+    # Heroic launcher
+    heroic = {
+      url = "github:Heroic-Games-Launcher/HeroicGamesLauncher/main";
+      flake = false;
+     };
+    # lutris launcher
+    lutris = {
+      url = "github:lutris/lutris/master";
+      flake = false;
+    };
+    # ProtonUp-Qt
+    protonupqt = {
+      url = "github:DavidoTek/ProtonUp-Qt/main";
+      flake = false;
+    };
+    # Gamescope 
+    gamescope = {
+      url = "github:ValveSoftware/gamescope/master";
+      flake = false;
+    };
+    #EDCD
+    EDCD = {
+     url = "github:EDCD/EDMarketConnector/stable";
+     flake = false; 
+    };
+  };
+
+  outputs = { self, nixpkgs, ... }@inputs: {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      # Set all inputs parameters as special arguments for all submodules,
+      # so you can directly use all dependencies in inputs in submodules
+      specialArgs = { inherit inputs; };
+      modules = [
+        # Import the previous configuration.nix we used,
+        # so the old configuration file still takes effect
+        ./configuration.nix
+      ];
+    };
+  };
+}
