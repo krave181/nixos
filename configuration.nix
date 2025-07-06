@@ -233,7 +233,7 @@
   users.users.steve = {
     isNormalUser = true;
     description = "steve";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" "gamemode" ];
    # subGidRanges = [
    #   {
    #       count = 65536;

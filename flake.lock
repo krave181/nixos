@@ -1,22 +1,5 @@
 {
   "nodes": {
-    "EDCD": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1727913042,
-        "narHash": "sha256-Iviv/7Wo2uPAEZa1RU8yb0vy45ylvnNllapdX0jShMw=",
-        "owner": "EDCD",
-        "repo": "EDMarketConnector",
-        "rev": "fc00839dfa31d087b2b809774024c21cb2044336",
-        "type": "github"
-      },
-      "original": {
-        "owner": "EDCD",
-        "ref": "stable",
-        "repo": "EDMarketConnector",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -32,23 +15,6 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "gamescope": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1743564569,
-        "narHash": "sha256-pyIzLLYHwD0685pdYAQYqgb0d4eBxg0Veo4QJn1Ilr0=",
-        "owner": "ValveSoftware",
-        "repo": "gamescope",
-        "rev": "f1f105b3a95b4fec5c92e8a10e6927cbb76fe804",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ValveSoftware",
-        "ref": "master",
-        "repo": "gamescope",
         "type": "github"
       }
     },
@@ -139,32 +105,12 @@
         "type": "github"
       }
     },
-    "protonupqt": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1744387587,
-        "narHash": "sha256-eiRZrO3LO0aL+ujCIlGfn6lGsh2EiEg0ksPojXzxNB8=",
-        "owner": "DavidoTek",
-        "repo": "ProtonUp-Qt",
-        "rev": "0c418459dd0dc27d9b20fd3757371a54b2b0e3cf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DavidoTek",
-        "ref": "main",
-        "repo": "ProtonUp-Qt",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "EDCD": "EDCD",
-        "gamescope": "gamescope",
         "helix": "helix",
         "heroic": "heroic",
         "lutris": "lutris",
         "nixpkgs": "nixpkgs_2",
-        "protonupqt": "protonupqt",
         "steamtinkerlaunch": "steamtinkerlaunch"
       }
     },
