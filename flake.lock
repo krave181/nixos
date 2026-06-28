@@ -1,52 +1,13 @@
 {
   "nodes": {
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "helix": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay"
-      },
-      "locked": {
-        "lastModified": 1744385517,
-        "narHash": "sha256-pqiSmtbquoBM3cVHELcXHl8CLT8moXVkwbtc5xd5Br0=",
-        "owner": "helix-editor",
-        "repo": "helix",
-        "rev": "340934db92aea902a61b9f79b9e6f4bd15111044",
-        "type": "github"
-      },
-      "original": {
-        "owner": "helix-editor",
-        "ref": "master",
-        "repo": "helix",
-        "type": "github"
-      }
-    },
     "heroic": {
       "flake": false,
       "locked": {
-        "lastModified": 1744060043,
-        "narHash": "sha256-A1npFCtCrStoq78qhepG0P5FvZAGeZVvwrpB1jQuYLE=",
+        "lastModified": 1782592127,
+        "narHash": "sha256-if1sFv6zgdoB6yhUdkReyY9fCVFeyyF+aUUwAT+p60g=",
         "owner": "Heroic-Games-Launcher",
         "repo": "HeroicGamesLauncher",
-        "rev": "5127a03d1db9621be3cca696f765505ebf48093a",
+        "rev": "274963e563776b79d5788ca9012c3ddd386ce0c1",
         "type": "github"
       },
       "original": {
@@ -56,30 +17,47 @@
         "type": "github"
       }
     },
-    "lutris": {
-      "flake": false,
+    "hytale-launcher": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
       "locked": {
-        "lastModified": 1744641870,
-        "narHash": "sha256-lUL7smY0l9gmF0QXQJbO5XSuv73I2pmEvAjLmpg86l8=",
-        "owner": "lutris",
-        "repo": "lutris",
-        "rev": "86f7fb0785a3ada8f47738539e7527387a6ebdfc",
+        "lastModified": 1782343419,
+        "narHash": "sha256-ZK63UUzC7nsZz96N3zDAlXxPEpC6LbnUDayTAGUrrtE=",
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
+        "rev": "5a989e1d2e1b36e4e361841a1761df4a989f8ffb",
         "type": "github"
       },
       "original": {
-        "owner": "lutris",
-        "ref": "master",
-        "repo": "lutris",
+        "owner": "JPyke3",
+        "repo": "hytale-launcher-nix",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1740560979,
-        "narHash": "sha256-Vr3Qi346M+8CjedtbyUevIGDZW8LcA1fTG0ugPY/Hic=",
+        "lastModified": 1781577229,
+        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1782467914,
+        "narHash": "sha256-pGvFkM8N0xEkIIXDe5YYfbEAvHrk4IxBrjB/x8OomhE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5135c59491985879812717f4c9fea69604e7f26f",
+        "rev": "e73de5be04e0eff4190a1432b946d469c794e7b4",
         "type": "github"
       },
       "original": {
@@ -89,81 +67,28 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1735563628,
-        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "helix": "helix",
         "heroic": "heroic",
-        "lutris": "lutris",
+        "hytale-launcher": "hytale-launcher",
         "nixpkgs": "nixpkgs_2",
         "steamtinkerlaunch": "steamtinkerlaunch"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "helix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1740623427,
-        "narHash": "sha256-3SdPQrZoa4odlScFDUHd4CUPQ/R1gtH4Mq9u8CBiK8M=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "d342e8b5fd88421ff982f383c853f0fc78a847ab",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "steamtinkerlaunch": {
       "flake": false,
       "locked": {
-        "lastModified": 1740162911,
-        "narHash": "sha256-I7Aa7bZ6WB5LfCxyZUbl7fshyr2YWlZTMZDJKCODvhY=",
+        "lastModified": 1752460600,
+        "narHash": "sha256-mCcxdm8odHvTt4aP58RHY6NkaUMmMbQesUtY6dvIvOc=",
         "owner": "sonic2kk",
         "repo": "steamtinkerlaunch",
-        "rev": "36e917c383a333caa43e187c06c0aed0c30c0421",
+        "rev": "8550ab26a712b7f5f6d0947070181446b9de61fd",
         "type": "github"
       },
       "original": {
         "owner": "sonic2kk",
         "ref": "master",
         "repo": "steamtinkerlaunch",
-        "type": "github"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
         "type": "github"
       }
     }

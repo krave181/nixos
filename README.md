@@ -1,2 +1,0 @@
-# nixos
-Nixos configurations files
