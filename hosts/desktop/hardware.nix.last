@@ -1,0 +1,44 @@
+{ config, pkgs, lib, ... }:
+
+{
+  # Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "nfs" ];
+
+  # Hardware
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  hardware.rtl-sdr.enable = true;
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
+  # === Hybrid Graphics: AMD iGPU default + NVIDIA on-demand (PRIME Offload) ===
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;               # Required for Steam, Proton, Wine, etc.
+  };
+
+#  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = false;
+
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;      # Provides the `nvidia-offload` command
+      };
+
+      amdgpuBusId = "PCI:11:0:0";     # Your Ryzen 3400G Vega iGPU
+      nvidiaBusId  = "PCI:1:0:0";     # Your RTX 3060
+    };
+  };
+}

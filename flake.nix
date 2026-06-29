@@ -20,19 +20,18 @@
     # so no external flake input is needed for EDMCModernOverlay.
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    packages.x86_64-linux.edmc-modern-overlay =
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs: {
+    flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
-      in
-      import ./hosts/desktop/edmc-modern-overlay.nix {
-        inherit pkgs;
-        lib = pkgs.lib;
-      };
-
+        pkgs = nixpkgs.legacyPackages.${system};
+        modernOverlay = pkgs.callPackage ./pkgs/edmc-modern-overlay.nix { };
+      in  {
+        packages = {
+          default = modernOverlay;
+          modernOverlay = modernOverlay;
+        }
+      });
+  }
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs self; };
