@@ -16,15 +16,22 @@
 
     hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
-     modules = [
+      modules = [
         ./hosts/desktop/configuration.nix
         # Add more modules here as needed
+        ./home.nix
+        home-manager.nixosModules.home-manager
       ];
     };
   };
