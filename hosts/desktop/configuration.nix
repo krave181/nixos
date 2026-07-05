@@ -15,7 +15,7 @@
   ];
 
   # Basic system settings
-  system.stateVersion = "25.11";
+  #system.stateVersion = "25.11";
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -35,10 +35,6 @@
   # Enable Flakes and nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
-  # nix.settings.download-buffer-size = 524288000;
   nix.settings.download-buffer-size = 734003200; # 700 MB
 
-#  nixpkgs.config.permittedInsecurePackages = [ "electron-33.4.11" ];
-
 }
-
