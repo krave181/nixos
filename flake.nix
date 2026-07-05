@@ -14,34 +14,17 @@
       flake = false;
     };
 
-    edxd = {
-      url = "github:Kepas-Beleglorn/EDXD";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
     hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
 
-        # Local plugin package expression is imported from ./edmc-modern-overlay.nix
-    # so no external flake input is needed for EDMCModernOverlay.
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs: {
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        modernOverlay = pkgs.callPackage ./pkgs/edmc-modern-overlay.nix { };
-      in  {
-        packages = {
-          default = modernOverlay;
-          modernOverlay = modernOverlay;
-        }
-      });
-  }
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs self; };
-      modules = [
+      specialArgs = { inherit inputs; };
+     modules = [
         ./hosts/desktop/configuration.nix
+        # Add more modules here as needed
       ];
     };
   };
