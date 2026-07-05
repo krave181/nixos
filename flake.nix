@@ -13,6 +13,11 @@
       url = "github:Heroic-Games-Launcher/HeroicGamesLauncher/main";
       flake = false;
     };
+
+    edxd = {
+      url = "github:Kepas-Beleglorn/EDXD";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
 
