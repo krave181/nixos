@@ -47,6 +47,9 @@ in
       kxstitch
       wpsoffice
       soundconverter
+      edmarketconnector
+      #edmc module requirements
+      python314Packages.sqlalchemy
     ];
   };
 
@@ -141,6 +144,7 @@ in
     nix-index
     devede
     xdg-utils  # For xdg-open and browser management
+    spice
   ];
   
 
