@@ -32,7 +32,7 @@ in
       #SDR 
       rtl-sdr
       gqrx
-
+      pcmanfm
       kdePackages.k3b
       cdrdao
       cdrkit
@@ -40,8 +40,8 @@ in
      ##  XFCE
       xfce4-whiskermenu-plugin
       xfce4-panel
-      thunar-archive-plugin
-      thunar-volman
+     # thunar-archive-plugin
+     # thunar-volman
       xfce4-i3-workspaces-plugin
       xarchiver
       kxstitch
