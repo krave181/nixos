@@ -1,7 +1,5 @@
 { config, pkgs, inputs, ... }:
 
-
-
 {
   imports = [
     ../../hardware-configuration.nix
@@ -21,9 +19,11 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Enable Flakes and nix-command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.download-buffer-size = 734003200; # 700 MB
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    nixpkgs.config.allowUnfree = true;
+    nix.settings.download-buffer-size = 734003200; # 700 MB
+  };
 
 
   home-manager = {

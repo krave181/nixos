@@ -5,13 +5,13 @@
   # manage.
   home.username = "steve";
   home.homeDirectory = "/home/steve";
-  programs.stateVersion = "25.11";
+  home.stateVersion = "25.11";
 
  
   home.packages = with pkgs; [
     # stable packages
-    programs.git = { enable = true; ... };
-    pkgs.fortune
+    git
+    fortune
 
 
     #unstable packages
@@ -24,6 +24,8 @@
 programs = {
   git = {
     enable = true;
+    userName = "steve";
+    userEmail = "edwardsm_99@yahoo.com";
   };
 
   bash = {
@@ -33,9 +35,7 @@ programs = {
     };
   };
 
-  home-manager = {
-    enable = true
-  };
+  home-manager.enable = true;
 };
  
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -51,7 +51,7 @@ programs = {
   };
 
   home.sessionVariables = {
-    # EDITOR = "vim";
+     EDITOR = "vim";
   };
-};
+}
  
