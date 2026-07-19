@@ -21,11 +21,11 @@
   # Enable Flakes and nix-command
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    nixpkgs.config.allowUnfree = true;
-    nix.settings.download-buffer-size = 734003200; # 700 MB
+    download-buffer-size = 734003200; # 700 MB
   };
 
-
+  nixpkgs.config.allowUnfree = true;
+  
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;

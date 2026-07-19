@@ -8,151 +8,69 @@ let
   '';
 in
   
-  {
-  # Define user
+ {
+  # ====================
+  # User Account (System Level)
+  # ====================
   users.users.steve = {
     isNormalUser = true;
     description = "steve";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" "gamemode" "cdrom" ];
-    packages = with pkgs; [
-      heroic
-      steamtinkerlaunch
-      hytale-launcher-wrapped
-      discord
-      hexchat
-      gamescope
-      ksnip
-      i3ipc-glib
-      thunderbird
-      brave
-      vscodium
-      calibre
-      picom
-      gpodder
-      #SDR 
-      rtl-sdr
-      gqrx
-      pcmanfm
-      kdePackages.k3b
-      cdrdao
-      cdrkit
-      kdePackages.okular 
-     ##  XFCE
-      xfce4-whiskermenu-plugin
-      xfce4-panel
-     # thunar-archive-plugin
-     # thunar-volman
-      xfce4-i3-workspaces-plugin
-      xarchiver
-      kxstitch
-      wpsoffice
-      soundconverter
-      edmarketconnector
-      #edmc module requirements
-      python314Packages.sqlalchemy
-    ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "docker" "gamemode" "cdrom" "audio" "video" ];
+    shell = pkgs.bash;                
   };
 
   security.sudo.extraRules = [{
-    users = ["steve"];
-    commands = [{ command = "ALL";
-      options = ["NOPASSWD"];
+    users = [ "steve" ];
+    commands = [{
+      command = "ALL";
+      options = [ "NOPASSWD" ];
     }];
   }];
 
-  # System packages
+# ====================
+  # System-wide packages (only things that truly need to be system-level)
+  # ====================
   environment.systemPackages = with pkgs; [
+    # Core tools
     git
     vim-full
     wget
     curl
-    gparted
     htop
-    hyfetch 
-    i3blocks
-    i3status
-    xfsprogs
-    cifs-utils
-    nfs-utils
-    mdadm
-    yad
-    hplip
-    python3
-    pavucontrol
-    firefox
-    kdePackages.falkon
-    unzip
-    dmenu
-    networkmanagerapplet
-    nitrogen
-    pasystray
-    rofi
-    redshift
-    p7zip
-    xz
-    unrar
-    zulu17
-    xkill
-    remmina
-    appimage-run
-    tartube-yt-dlp
-    usbutils
-    hugo
-    glow
     btop
-    iotop
-    iftop
-    strace
-    ltrace
-    lsof
-    sysstat
-    lm_sensors
-    ethtool
+    gparted
+    nfs-utils
+    cifs-utils
+    usbutils
     pciutils
-    podman
-    shadow
-    distrobox
-    tilda
-    cowsay
-    file
-    which
- #   peazip
-    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-    gnupg
-    font-manager
+    lm_sensors
+    nix-index
+    xdg-utils
+
+    # Gaming / Hardware
+    gamescope
     mangohud
-    mtr
-    iperf3
-    dnsutils
-    ldns
-    aria2
-    socat
-    nmap
-    gdu
-    ipcalc
-    #steamtinkerlaunch dependencies
     xdotool
     xwininfo
+
+    # Virtualization / Containers
+    unstable.podman
+    distrobox
+    
+    # Misc system utilities
+    onlyoffice-desktopeditors
+    pavucontrol
+    networkmanagerapplet
+    appimage-run
     nix-ld
-    asunder
-    alacritty
-    dvdplusrwtools
-    nix-index
-    devede
-    xdg-utils  # For xdg-open and browser management
-    spice
   ];
   
-
-
-  # Environment variables
+ # Environment variables (system-wide)
   environment.variables.EDITOR = "vim-full";
+
   environment.pathsToLink = [ "/libexec" ];
+
   environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/$USER/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/stevenixos/.steam/root/compatibilitytools.d";
   };
 }

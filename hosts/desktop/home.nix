@@ -1,21 +1,69 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Basic info
   home.username = "steve";
   home.homeDirectory = "/home/steve";
+
   home.stateVersion = "25.11";
 
- 
+  # ====================
+  # User Packages
+  # ====================
   home.packages = with pkgs; [
-    # stable packages
-    git
+    # Gaming
+    unstable.heroic
+    steamtinkerlaunch
+    gamescope
+    mangohud
+
+    # Communication & Productivity
+    discord
+    hexchat
+    thunderbird
+    brave
+    vscodium
+    calibre
+    gpodder
+
+    # Utilities
+    ksnip
+    picom
+    pcmanfm
+    xarchiver
+    nitrogen
+    rofi
+    dmenu
+    pasystray
+    redshift
+    tilda
+    cowsay
     fortune
+    yad
 
+    # Media / Graphics
+    kdePackages.okular
+    kdePackages.k3b
+    soundconverter
+    tartube-yt-dlp
+    asunder
+    devede
 
-    #unstable packages
-    unstable.heroic 
+    # SDR
+    rtl-sdr
+    gqrx
+
+    # XFCE / i3 plugins
+    #xfce4-whiskermenu-plugin
+    #xfce4-panel
+    #xfce4-i3-workspaces-plugin
+
+    # Development / Misc
+    python314Packages.sqlalchemy
+    edmarketconnector
+    hugo
+    glow
+    font-manager
   ];
 
 
@@ -41,7 +89,7 @@ programs = {
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
   home.file = {
-    ".screenrc".source = ./dotfiles/screenrc;
+    #".screenrc".source = ./dotfiles/screenrc;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
