@@ -30,7 +30,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.steve = import ./hosts/desktop/home.nix;
+    users.steve = import ./home.nix;
     backupFileExtension = "backup";
   };
 } 
