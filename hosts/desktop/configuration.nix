@@ -1,5 +1,17 @@
 { config, pkgs, inputs, ... }:
 
+
+
+{
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs; };
+    users.steve = import ./home.nix;
+    backupFileExtension = "backup";
+  };
+}
+
 {
   imports = [
     ../../hardware-configuration.nix
