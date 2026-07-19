@@ -51,7 +51,7 @@
             useUserPackages = true;
             extraSpecialArgs = { inherit inputs; };
 
-            users.steve = import ./home.nix;
+            users.steve = import ./hosts/desktop/home.nix;
           };
         }
       ];
