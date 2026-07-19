@@ -33,7 +33,4 @@
     users.steve = import ./hosts/desktop/home.nix;
     backupFileExtension = "backup";
   };
-}
-
-
-}
+} 
