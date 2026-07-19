@@ -1,29 +1,60 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  description = "Steven's NixOS configuration";
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-  # networking.hostName = "nixos"; # Define your hostname.
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-  
-  # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
-  # and migrated your data accordingly.
-  #
-  # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "nixos-unstable"; # Did you read the comment?
+    steamtinkerlaunch = {
+      url = "github:sonic2kk/steamtinkerlaunch/master";
+      flake = false;
+    };
 
+    heroic = {
+      url = "github:Heroic-Games-Launcher/HeroicGamesLauncher/main";
+      flake = false;
+    };
+
+    hytale-launcher.url = "github:JPyke3/hytale-launcher-nix";
+  };
+
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+
+      modules = [
+        ./hosts/desktop/configuration.nix
+
+        # Unstable overlay
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              unstable = import inputs.nixpkgs-unstable {
+                inherit (prev) system;
+                config.allowUnfree = true;
+              };
+            })
+          ];
+        }
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            extraSpecialArgs = { inherit inputs; };
+            backupFileExtension = "backup";
+
+            users.stevenixos = import ./home.nix;   # Points to root home.nix
+          };
+        }
+      ];
+    };
+  };
 }
-
