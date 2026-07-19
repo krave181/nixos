@@ -16,7 +16,8 @@
   system.stateVersion = "25.11";
   time.timeZone = "America/New_York";
     
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #Nvidia compatable kernel
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   # Enable Flakes and nix-command
   nix.settings = {
