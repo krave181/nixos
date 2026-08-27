@@ -86,13 +86,13 @@
   # ======================
   environment.systemPackages = with pkgs; [
     wineWow64Packages.stable
-    winetricks
-    steam-run
-    protontricks
-    protonup-ng
+    unstable.winetricks
+    unstable.steam-run
+    unstable.protontricks
+    unstable.protonup-qt
     input-leap
     orca-slicer
-    lutris-free
+    unstable.lutris
     ntfs3g
     dvdplusrwtools
   ];

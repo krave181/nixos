@@ -73,9 +73,9 @@
     gqrx
 
     # XFCE / i3 plugins
-    #xfce4-whiskermenu-plugin
-    #xfce4-panel
-    #xfce4-i3-workspaces-plugin
+    xfce.xfce4-whiskermenu-plugin
+    xfce.xfce4-panel
+    xfce.xfce4-i3-workspaces-plugin
 
     # Development / Misc
     pkgs.python314Packages.sqlalchemy
@@ -101,13 +101,39 @@ programs = {
   bash = {
     enable = true;
     shellAliases = {
-    ll = "ls -l";
+      ll = "ls -l";
+      nrs = "cd ~/nixos;sudo nixos-rebuild switch --flake .#desktop";
+      bat = "bat -n -f --theme 1337 %1";
+    };
+
+    initExtra = ''
+      export PS1='\[\e[38;5;112m\]\u\[\e[38;5;226m\]@\[\e[38;5;44m\]\H\[\e[0m\] in \[\e[38;5;191m\]\W\[\e[0m\] \[\e[38;5;155m\]>\[\e[0m\] '
+    '';
+  };
+
+  alacritty = {  
+    enable = true;
+    settings = {
+      key_bindings = [
+        {
+          key = "Backspace";
+          chars = "\x7f";
+        }
+      ];
+     window.opacity = 0.9;
+     font.normal = {
+       family = "JetBrains Mono";
+       style = "Italic";
+     };
+     font.size = 16;
     };
   };
- 
+
   home-manager.enable = true;
 };
- 
+
+
+
 # Home Manager is pretty good at managing dotfiles. The primary way to manage
 # plain files is through 'home.file'.
   home.file = {

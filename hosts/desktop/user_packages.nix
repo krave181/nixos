@@ -29,6 +29,7 @@
    unzip
    p7zip
    unrar
+   bat
 
    # === Monitoring & Diagnostics ===
    iotop
@@ -45,6 +46,7 @@
    ipcalc
    socat
    ethtool
+   nvtopPackages.full
 
    # === Desktop / WM Utilities ===
    i3blocks
@@ -62,10 +64,10 @@
    networkmanagerapplet
 
    # === Gaming / Hardware ===
-    gamescope
-   mangohud
-   xdotool
-   xwininfo
+   unstable.gamescope
+   unstable.mangohud
+   unstable.xdotool
+   unstable.xwininfo
 
    # === Virtualization / Containers ===
    podman
@@ -75,7 +77,8 @@
 
    # === Browsers ===
    firefox
-   kdePackages.falkon
+   vivaldi
+   #packages.chromium-codecs-ffmpeg-extra #For vivaldi
 
    # === Media & Content ===
    asunder
@@ -100,6 +103,7 @@
 
    # === Office & Productivity ===
    onlyoffice-desktopeditors
+   kdePackages.kate 
 
    # === Misc Utilities ===
    hyfetch

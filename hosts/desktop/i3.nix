@@ -65,7 +65,7 @@
        "XF86AudioMicMute"     = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && ${refresh_i3status}";
 
         # Core app shortcuts
-       "${mod}+Return" = "exec i3-sensible-terminal";
+       "${mod}+Return" = "exec alacritty";
        "${mod}+Shift+q" = "kill";
        "${mod}+d" = "exec --no-startup-id \"rofi -modi drun,run -show drun\"";
 
@@ -139,7 +139,7 @@
          { class = "Opera"; instance = "Opera"; }
        ];
        "${terms}" = [
-         { class = "Xfce4-terminal"; instance = "xfce4-terminal"; }
+         { class = "alacritty"; instance = "alacritty"; }
        ];
        "${chats}" = [
          { class = "discord"; instance = "discord"; }

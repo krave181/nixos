@@ -45,8 +45,19 @@ in
     pciutils
     lm_sensors
     nix-index
-    xdg-utils
-
+    curl
+    # For EDCM Modern Overlay
+    unstable.xdg-utils
+    unstable.wmctrl
+    unstable.python3
+    unstable.python3Packages.pip
+    unstable.libxcb
+    unstable.xcb-util-cursor
+    unstable.libxkbcommon
+    ####
+    rsync
+    tilix
+    
     # Gaming / Hardware
     gamescope
     mangohud

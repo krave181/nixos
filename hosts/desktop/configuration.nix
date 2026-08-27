@@ -13,7 +13,7 @@
     ./networking.nix
     ./virtualization.nix
     ./user_packages.nix
-    ./tools.nix
+#    ./tools.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -22,7 +22,7 @@
 
   # Basic system settings
   time.timeZone = "America/New_York";
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
 
   # Nix settings
@@ -32,4 +32,10 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.gc = {
+  automatic = true;
+  dates = "monthly";
+  options = "--delete-older-than 30d";
+  };
 }
