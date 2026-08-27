@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Basic info
@@ -6,6 +6,25 @@
   home.homeDirectory = "/home/steve";
 
   home.stateVersion = "25.11";
+
+  imports = [
+   ./hosts/desktop/i3.nix
+  ];
+
+  #Services
+
+  services.picom = {
+  enable = true;
+  vSync = true;            # helps with tearing on the 120Hz + rotated setup
+  settings = {
+    backend = "xrender";       # "xrender" is the fallback if glx misbehaves
+    blur = {
+      method = "gaussian";
+      size = 10;
+      deviation = 5.0;
+    };
+  };
+  };
 
   # ====================
   # User Packages
@@ -85,7 +104,7 @@ programs = {
     ll = "ls -l";
     };
   };
-
+ 
   home-manager.enable = true;
 };
  

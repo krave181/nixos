@@ -40,7 +40,7 @@ in
       ExecStart = "${pkgs.pipewire}/bin/pw-loopback -C --capture-props='node.name=\"Web Audio Recorder\"' -P latency=64ms";
       Restart = "always";
       RestartSec = 2;
-      User = username;  # ← use the `let` variable
+      User = "steve";  # ← use the `let` variable
     };
   };
 

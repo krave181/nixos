@@ -4,6 +4,7 @@
   imports = [
 
     ./hardware-configuration.nix
+    ./hardware.nix
     ./users.nix
     ./services.nix
     ./audio-recording.nix  
@@ -11,6 +12,8 @@
 #    ./fonts.nix 
     ./networking.nix
     ./virtualization.nix
+    ./user_packages.nix
+    ./tools.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
