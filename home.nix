@@ -114,7 +114,7 @@ programs = {
   alacritty = {  
     enable = true;
     settings = {
-      key_bindings = [
+      bindings = [
         {
           key = "Backspace";
           chars = "\x7f";
