@@ -111,21 +111,12 @@ programs = {
     '';
   };
 
-  alacritty = {  
+  ghostty = {  
     enable = true;
     settings = {
-      bindings = [
-        {
-          key = "Backspace";
-          chars = "\u007f";
-        }
-      ];
-     window.opacity = 0.9;
-     font.normal = {
-       family = "JetBrains Mono";
-       style = "Italic";
-     };
-     font.size = 16;
+     font-family = "JetBrains Mono";
+     font-style = "italic";
+     font-size = "14";
     };
   };
 
