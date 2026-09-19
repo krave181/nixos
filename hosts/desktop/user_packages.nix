@@ -60,7 +60,7 @@
    yad
    xkill
    tilda
-   alacritty
+   ghostty
    networkmanagerapplet
 
    # === Gaming / Hardware ===

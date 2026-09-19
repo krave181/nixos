@@ -117,7 +117,7 @@ programs = {
       bindings = [
         {
           key = "Backspace";
-          chars = "\x7f";
+          chars = "\u007f";
         }
       ];
      window.opacity = 0.9;
