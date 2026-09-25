@@ -117,7 +117,16 @@ programs = {
      font-family = "JetBrains Mono";
      font-style = "italic";
      font-size = "14";
+     shell-integration-features = "ssh-terminfo,ssh-env";
     };
+  };
+
+  ssh = {
+     enable = true;
+     extraConfig = ''
+      Host *
+        SetEnv TERM=xterm-256color
+     '';
   };
 
   home-manager.enable = true;
